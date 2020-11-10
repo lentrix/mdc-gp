@@ -24,6 +24,8 @@
     </div>
 
     <div class="col-md-4">
+        <?php include('errors.php'); ?>
+        <?php include('infos.php'); ?>
         <h3>Unable to Login?</h3>
         <a href="index.php?page=activate" class="btn btn-info">Activate your account</a>
     </div>

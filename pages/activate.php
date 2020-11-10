@@ -53,6 +53,9 @@
     </div>
 
     <div class="col-md-7">
+        <?php include('errors.php'); ?>
+        <?php include('infos.php'); ?>
+        
         <div class="card">
             <div class="card-body bg-warning">
                 <p class="lead">Notice!</p>

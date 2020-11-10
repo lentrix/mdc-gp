@@ -1,4 +1,5 @@
 <?php 
+session_start();
 
 include("lib/db.php");
 
@@ -33,11 +34,29 @@ if(isset($_POST['activate'])) {
 
         if( strcasecmp($student->fname, $fname) != 0 ) $errors[] = "Invalid First Name";
 
-        if( strcasecmp($student->bdate, $bdate ) !=0 ) $errors[] = "Invalid Birth Date " . $student->bdate . "<>" . $bdate;
+        if( strcasecmp($student->bdate, $bdate ) !=0 ) $errors[] = "Invalid Birth Date ";
 
     }
 
-    print_r($errors);
+    if(count($errors)>0) {
+        $_SESSION['mdc-gp']['errors'] = json_encode($errors);
+        $_SESSION['mdc-gp']['data'] = json_encode($_POST);
+        header("location: index.php?page=activate");
+    }else {
+        $stin = $pdo->prepare("INSERT INTO `gp-users` (`idnum`, `password`) 
+            VALUES (:idnum, md5(:password))");
+        $stin->execute([
+            'idnum' => $idnum,
+            'password' => $password
+        ]);
+
+        unset($_SESSION['mdc-gp']['errors']);
+        unset($_SESSION['mdc-gp']['data']);
+
+        $_SESSION['mdc-gp']['info'] = "Your account has been activated. You may login now.";
+
+        header("location: index.php?page=login");
+    }
 
 } else {
     echo "No Form submission.";
