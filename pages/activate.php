@@ -1,3 +1,11 @@
+<?php 
+
+if(isset($_SESSION['mdc-gp']['data'])) {
+    $data = json_decode($_SESSION['mdc-gp']['data']);
+}
+
+?>
+
 <br>
 
 <div class="row">
@@ -12,32 +20,38 @@
                 
                     <div class="form-group">
                         <label for="idnum">ID Number</label>
-                        <input type="text" name="idnum" id="idnum" class="form-control">
+                        <input type="text" name="idnum" id="idnum" class="form-control"
+                            value="<?= isset($data) ? $data->idnum: '' ?>">
                     </div>
 
                     <div class="form-group">
                         <label for="lname">Last Name</label>
-                        <input type="text" name="lname" id="lname" class="form-control">
+                        <input type="text" name="lname" id="lname" class="form-control"
+                        value="<?= isset($data) ? $data->lname: '' ?>">
                     </div>
 
                     <div class="form-group">
                         <label for="fname">First Name</label>
-                        <input type="text" name="fname" id="fname" class="form-control">
+                        <input type="text" name="fname" id="fname" class="form-control"
+                        value="<?= isset($data) ? $data->fname: '' ?>">
                     </div>
 
                     <div class="form-group">
                         <label for="bdate">Birth Date</label>
-                        <input type="date" name="bdate" id="bdate" class="form-control">
+                        <input type="date" name="bdate" id="bdate" class="form-control"
+                            value="<?= isset($data) ? $data->bdate: '' ?>">
                     </div>
 
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" name="password" id="password" class="form-control">
+                        <input type="password" name="password" id="password" class="form-control"
+                            value="<?= isset($data) ? $data->password: '' ?>">
                     </div>
 
                     <div class="form-group">
                         <label for="password_confirm">Confirm Password</label>
-                        <input type="password" name="password_confirm" id="password_confirm" class="form-control">
+                        <input type="password" name="password_confirm" id="password_confirm" class="form-control"
+                            value="<?= isset($data) ? $data->password_confirm: '' ?>">
                     </div>
 
                     <div class="form-group">

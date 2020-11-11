@@ -10,12 +10,17 @@
             <div class="card-body">
                 <form action="process_login.php" method="post">
                     <div class="form-group">
-                        <label for="idnumber">ID Number</label>
-                        <input type="text" class="form-control" name="idnumber" id="idnumber">
+                        <label for="idnum">ID Number</label>
+                        <input type="text" class="form-control" name="idnum" id="idnum">
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
                         <input type="password" class="form-control" name="password" id="password">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary float-right" type="submit" name="login">
+                            Login 
+                        </button>
                     </div>
                 </form>
             </div>

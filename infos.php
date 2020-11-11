@@ -1,23 +1,14 @@
-<?php 
+<?php if(isset($_SESSION['mdc-gp']['info'])): ?>
 
-if(isset($_SESSION['mdc-gp']['info'])) {
-    $infos = $_SESSION['mdc-gp']['info'];
-}
-
-?>
-
-<?php if(isset($info)) : ?>
-
-<div class="card">
-    <div class="card-body bg-info text-white">
-        <?= $info; ?>
+    <div class="card">
+        <div class="card-body bg-info">
+            <?= $_SESSION['mdc-gp']['info']; ?>
+        </div>
     </div>
-</div>
 
-<?php else: ?>
-
-<?= json_encode($_SESSION['mdc-gp']); ?>
+    <?php 
+        //remove info from session
+        unset($_SESSION['mdc-gp']['info']);
+    ?>
 
 <?php endif; ?>
-
-<?php unset($_SESSION['mdc-gp']['info']); ?>

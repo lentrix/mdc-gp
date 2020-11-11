@@ -28,7 +28,7 @@ if(isset($_GET['page'])) {
     
     include('nav.php');
 
-    if(isset($_SESSION['mdc-gp']['idnum'])) {
+    if(isset($_SESSION['mdc-gp']['user'])) {
     
         if(in_array($page, ['login', 'activate'])) {
             $page =  "home";
