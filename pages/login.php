@@ -28,7 +28,7 @@
 
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-7">
         <?php include('errors.php'); ?>
         <?php include('infos.php'); ?>
         <h3>Unable to Login?</h3>
