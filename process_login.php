@@ -6,7 +6,7 @@ if(isset($_POST['login'])) {
     $idnum = $_POST['idnum'];
     $pass = $_POST['password'];
 
-    $st = $pdo->prepare("SELECT si.lname, si.fname, u.idnum FROM `gp-users` u
+    $st = $pdo->prepare("SELECT si.lname, si.fname, u.idnum, si.idext FROM `gp-users` u
         LEFT JOIN stud_info si ON si.idnum=u.idnum
         WHERE `u`.`idnum`=? AND `u`.`password`=MD5(?)");
     $st->execute([$idnum, $pass]);

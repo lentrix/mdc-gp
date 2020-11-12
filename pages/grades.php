@@ -39,8 +39,8 @@ function cutify($text) {
     <div class="card-header bg-light text-dark">
         <div class="row">
             <div class="col-sm-6" style="font-size: 1.2em">
-                <strong>ID Number:</strong> 001683-1T96 <br>
-                <strong>Student Name:</strong> Benjie B. Lenteria
+                <strong>ID Number:</strong> <?= $usr->idnum . "-" . $usr->idext ?> <br>
+                <strong>Student Name:</strong> <?= $usr->fname . " " . $usr->lname ?>
             </div>
             <div class="col-sm-6">
                 <div class="float-right">
