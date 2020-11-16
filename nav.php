@@ -7,7 +7,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <?php if(isset($_SESSION['mdc-gp']['user'])) : ?>
-
+            <?php $user = json_decode($_SESSION['mdc-gp']['user']); ?>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
@@ -19,6 +19,13 @@
                     <li class="nav-item">
                         <a class="nav-link <?= $page=='profile'?'active':''?>" href="index.php?page=profile">Profile</a>
                     </li>
+
+                    <?php if(SysUtil::isMod($user->idnum)): ?>
+                    <li class="nav-item">
+                        <a class="nav-link <?= $page=='utility'?'active':''?>" href="index.php?page=utility">Utility</a>
+                    </li>
+                    <?php endif; ?>
+
                     <li class="nav-item">
                         <a class="nav-link" href="logout.php">Logout</a>
                     </li>

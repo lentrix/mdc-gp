@@ -80,7 +80,7 @@ if(isset($_SESSION['mdc-gp']['data'])) {
                 </p>
                 <p>
                     If you require further assistance, please contact the Registrar's office
-                    at Tel. No. 508-8106 loc. 105
+                    at Tel. No. 508-8106 loc. 109
                 </p>
             </div>
         </div>
