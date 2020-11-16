@@ -17,7 +17,7 @@
                         <a class="nav-link" href="index.php?page=grades">Grades</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?= $page=='announcements'?'active':''?>" href="index.php?page=announcements">Announcements</a>
+                        <a class="nav-link <?= $page=='profile'?'active':''?>" href="index.php?page=profile">Profile</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="logout.php">Logout</a>
