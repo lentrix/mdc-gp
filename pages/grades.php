@@ -72,12 +72,12 @@ function cutify($text) {
             <table class="table table-bordered table-stripped table-sm">
                 <thead>
                     <tr class="bg-info">
-                        <th>Course No.</th>
-                        <th>Description</th>
-                        <th>Teacher</th>
-                        <th style="text-align:center">Mid</th>
-                        <th style="text-align:center">Fin</th>
-                        <th style="text-align:center">Rating</th>
+                        <th scope="grd">Course No.</th>
+                        <th scope="grd" class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell">Description</th>
+                        <th scope="grd" class="d-none d-sm-table-cell d-md-table-cell d-lg-table-cell d-xl-table-cell">Teacher</th>
+                        <th scope="grd" style="text-align:center">Mid</th>
+                        <th scope="grd" style="text-align:center">Fin</th>
+                        <th scope="grd" style="text-align:center">Rating</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -85,8 +85,8 @@ function cutify($text) {
 
                         <tr>
                             <td><?= $grade->name ?></td>
-                            <td><?= cutify($grade->descript) ?></td>
-                            <td><?= cutify($grade->lname) ?>, <?= cutify($grade->fname) ?></td>
+                            <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"><?= cutify($grade->descript) ?></td>
+                            <td class="d-none d-sm-table-cell d-md-table-cell d-lg-table-cell d-xl-table-cell"><?= cutify($grade->lname) ?>, <?= cutify($grade->fname) ?></td>
                             <td style="text-align:center"><?= $grade->mgrade ?></td>
                             <td style="text-align:center"><?= $grade->fgrade ?></td>
                             <td style="text-align:center"><?= $grade->rating ?></td>

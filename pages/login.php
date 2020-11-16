@@ -11,7 +11,7 @@
                 <form action="process_login.php" method="post">
                     <div class="form-group">
                         <label for="idnum">ID Number</label>
-                        <input type="text" class="form-control" name="idnum" id="idnum">
+                        <input type="number" class="form-control" name="idnum" id="idnum">
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>

@@ -14,7 +14,7 @@
                         <a class="nav-link <?= $page=='home'?'active':''?>" href="index.php">Home</a>
                     </li>
                     <li class="nav-item <?= $page=='grades'?'active':''?>">
-                        <a class="nav-link" href="index.php?page=grades">Grades</a>
+                        <a class="nav-link" href="index.php?page=grades">My Grades</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link <?= $page=='profile'?'active':''?>" href="index.php?page=profile">Profile</a>
