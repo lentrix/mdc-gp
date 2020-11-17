@@ -1,9 +1,15 @@
 <?php 
 
-$host = "192.168.1.10";
+// $host = "192.168.1.10";
+// $dbname = "mdc";
+// $user = "grading";
+// $pass = "system";
+
+$host = "localhost";
 $dbname = "mdc";
-$user = "grading";
-$pass = "system";
+$user = "root";
+$pass = "";
+
 $charset = "utf8mb4";
 
 //data source name

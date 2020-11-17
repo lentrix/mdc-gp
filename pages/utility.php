@@ -20,12 +20,12 @@ if(isset($_POST['search'])) {
 
 ?>
 <br>
-<?php include("infos.php"); ?>
 
 <h1>System Utility</h1>
-
+<br>
 <div class="row">
     <div class="col-md-4">
+        <h3>Change Password</h3>
         <form action="index.php?page=utility" method="post">
             <div class="form-group">
                 <label for="key">Search Student</label>
@@ -34,11 +34,28 @@ if(isset($_POST['search'])) {
             </div>
             <button class="btn btn-primary" type="submit" name="search">Search</button>
         </form>
+        <br>
+        <hr>
+        <h3>Administrative Activator</h3>
+        <form action="util_activate.php" method="post">
+            <div class="form-group">
+                <label for="idnum">ID Number</label>
+                <input type="text" name="idnum" id="idnum" class="form-control">
+            </div>
+            <div class="form-group">
+                <div>This action will generate a temporary password automatically.</div>
+                <button class="btn btn-primary" type="submit" name="activate">Activate Account</button>
+            </div>
+        </form>
     </div>
 
-    <?php if(isset($_POST['search'])) : ?>
+    <div class="col-md-8">
 
-        <div class="col-md-8">
+        <?php include("errors.php"); ?>
+        <?php include("infos.php"); ?>
+
+        <?php if(isset($_POST['search'])) : ?>
+
             <p>Search results for keyword "<?= $_POST['key'];?>"...</p>
 
             <?php if(count($data)==0): ?>
@@ -56,7 +73,8 @@ if(isset($_POST['search'])) {
                     </a>
                 <?php endforeach; ?>
             </div>
-        </div>
 
-    <?php endif; ?>
+        <?php endif; ?>
+
+    </div>
 </div>
