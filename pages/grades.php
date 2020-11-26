@@ -14,6 +14,7 @@ $sems = $st1->fetchAll();
 
 if(isset($_GET['sem_code'])) {
     $semCode = $_GET['sem_code'];
+    $semStr = "";
 
     $st2 = $pdo->prepare(
         "SELECT sb.mgrade, sb.fgrade, sb.rating, sj.name, sj.descript, tch.lname, tch.fname
@@ -50,9 +51,16 @@ function cutify($text) {
                         <select name="sem_code" id="sem_code">
                             <option value="">...</option>
                             <?php foreach($sems as $sem): ?>
-
+                                <?php 
+                                if($sem->sem_code == $semCode) {
+                                    $selected = "selected";
+                                    $semStr = $sem->sem;
+                                }else {
+                                    $selected = "";
+                                }
+                                ?>
                                 <option value="<?= $sem->sem_code?>" 
-                                        <?= (isset($semCode) && $semCode==$sem->sem_code)?"selected":"" ?>>
+                                        <?= $selected ?>>
                                     <?= $sem->sem?>
                                 </option>
 
@@ -67,7 +75,7 @@ function cutify($text) {
     <div class="card-body">
         <?php if(isset($semCode)): ?>
 
-            <h3 style="text-align:center">1st Sem AY 2020-2021</h3>
+            <h3 style="text-align:center"><?= $semStr ?></h3>
 
             <table class="table table-bordered table-stripped table-sm">
                 <thead>
