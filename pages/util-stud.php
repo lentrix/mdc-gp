@@ -51,6 +51,7 @@ $stud = $st1->fetch(PDO::FETCH_OBJ);
                 <input type="password" name="confirm_password" id="confirm_password" class="form-control">
             </div>
             <div class="form-group">
+                <button class="btn btn-info" type="button" id="generate">Generate</button>
                 <button class="btn btn-primary" type="submit" name="change_password">Change Password</button>
             </div>
         </form>
@@ -59,3 +60,23 @@ $stud = $st1->fetch(PDO::FETCH_OBJ);
         <?php include('errors.php'); ?>
     </div>
 </div>
+
+<script>
+
+function getRandomString(length) {
+    var randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var result = '';
+    for ( var i = 0; i < length; i++ ) {
+        result += randomChars.charAt(Math.floor(Math.random() * randomChars.length));
+    }
+    return result;
+}
+
+$(document).ready(function(){
+    $("#generate").click(function(){
+        var rndString = getRandomString(6);
+        $("#password").val(rndString);
+        $("#confirm_password").val(rndString);
+    })
+})
+</script>

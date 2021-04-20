@@ -26,7 +26,7 @@ if(isset($_POST['change_password'])) {
         'idnum' => $idnum
     ]);
 
-    $_SESSION['mdc-gp']['info'] = "The password of $idnum has been changed.";
+    $_SESSION['mdc-gp']['info'] = "The password of $idnum has been changed to $password.";
 
     header("location: index.php?page=utility");
 }
