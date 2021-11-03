@@ -1,6 +1,7 @@
 <?php 
 
-$host = "192.168.1.10";
+// $host = "192.168.1.10";
+$host = "203.177.91.83";
 $dbname = "mdc";
 $user = "grading";
 $pass = "system";

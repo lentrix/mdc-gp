@@ -19,8 +19,8 @@ if(isset($_GET['sem_code'])) {
     $st2 = $pdo->prepare(
         "SELECT sb.mgrade, sb.fgrade, sb.rating, sj.name, sj.descript, tch.lname, tch.fname
         FROM `sub_enrol` sb 
-        LEFT JOIN subjects sj ON sj.sub_code=sb.sub_code
         LEFT JOIN class cl ON cl.class_code=sb.class_code
+        LEFT JOIN subjects sj ON sj.sub_code=cl.sub_code
         LEFT JOIN teacher tch ON tch.tch_num=cl.tch_num
         WHERE sb.idnum=:idnum AND sb.sem_code=:sem_code");
     $st2->execute([
